@@ -2,6 +2,7 @@ import "reflect-metadata";
 import Express from "express"
 import MovieRouter from "./routes/MovieRoute"
 import UploadRouter from "./routes/UploadRoute"
+import history from "connect-history-api-fallback";
 // 数据库：mongodb
 // 数据库驱动：mongodb、mongoose
 // 对ts对支持不是太好
@@ -12,8 +13,9 @@ import UploadRouter from "./routes/UploadRoute"
 // express, koa2
 
 const app = Express();
-
-app.use("upload", Express.static("public/upload"));
+app.use(history());
+app.use("/upload", Express.static("public/upload"));
+app.use("/", Express.static("public/build"));
 
 app.use(Express.json());
 

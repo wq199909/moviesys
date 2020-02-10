@@ -27,7 +27,7 @@ const upload = multer({
         }
     }
 }).single("imgfile");
-router.post("/", (req, res) => {
+router.post("/", upload, (req, res) => {
     upload(req, res, err=>{
         if(err){
             ResponseHelper.sendError(err.message, res);
