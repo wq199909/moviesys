@@ -17,3 +17,15 @@
 2. 客户端
 
 > tslint: 跟eslint相似，是用于检查代码风格
+
+react脚手架
+
+create-react-app
+
+nextjs
+
+umijs
+
+先开发客户端对ajax请求
+
+有的时候，服务器和客户端会共用一个类型，如果要处理此处的重复代码问题，最佳做法是自行使用webpack搭建工程
